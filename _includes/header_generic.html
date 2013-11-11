@@ -1,0 +1,17 @@
+            <section class="header">
+                <a href="{{ site.url }}" class="cover"></a>
+
+                <h1>{{ site.greeting }}</h1>
+
+                </div>
+
+                <nav class="menu">
+                    <ul>
+                        {% for link in site.navigation %}
+                            <li class="item">
+                                <a href="{{ link.url }}">{{ link.text }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </section>

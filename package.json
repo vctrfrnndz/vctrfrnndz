@@ -1,0 +1,9 @@
+{
+  "name": "vctrfrnndz",
+  "version": "0.0.0",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-less": "~0.7.0",
+    "grunt-contrib-watch": "~0.5.3"
+  }
+}

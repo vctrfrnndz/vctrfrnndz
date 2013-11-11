@@ -1,0 +1,26 @@
+name: "Víctor Fernández"
+desciption: "Front-end developer and designer"
+greeting: "Hi there, my name is Víctor. I'm a front-end developer."
+markdown: maruku
+permalink: /:year/:title
+pygments: true
+exclude: [node_modules, Gruntfile.js, package.json, README.md]
+destination: public
+
+navigation:
+- text: Projects
+  url: '#projects'
+- text: Get in touch
+  url: '#contact'
+- text: About me
+  url: '#about-me'
+
+social:
+- name: Twitter
+  url: http://twitter.com/vctrfrnndz
+- name: Github
+  url: http://github.com/vctrfrnndz
+- name: Dribbble
+  url: http://dribbble.com/vctrfrnndz
+- name: Medium
+  url: http://medium.com/vctrfrnndz
