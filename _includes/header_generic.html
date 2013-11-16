@@ -1,17 +1,20 @@
             <section class="header">
-                <a href="{{ site.url }}" class="cover"></a>
+                <div class="background forest"></div>
+                <div class="header-content">
+                    <h1>{{ site.greeting }}</h1>
 
-                <h1>{{ site.greeting }}</h1>
-
-                </div>
-
-                <nav class="menu">
-                    <ul>
-                        {% for link in site.navigation %}
+                    <div class="profile-picture">
+                        <img src="assets/img/content/circle.png" alt="Hey there!">
+                    </div>
+                    
+                    <nav class="menu">
+                        <ul>
+                            {% for link in site.navigation %}
                             <li class="item">
-                                <a href="{{ link.url }}">{{ link.text }}</a>
+                                <a href="{{ link.url }}">{{ link.text }} <span class="icon icon-{{ link.icon }}"></span></a>
                             </li>
-                        {% endfor %}
-                    </ul>
-                </nav>
+                            {% endfor %}
+                        </ul>
+                    </nav>
+                </div>
             </section>

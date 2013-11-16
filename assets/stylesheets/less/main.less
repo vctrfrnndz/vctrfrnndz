@@ -1,9 +1,303 @@
 @import url("kick.less");
+@import url("options.less");
+@import url("../../fonts/iconbundle/style.css");
 
-.meyer-reset;
+.normalize;
+.solarized;
 
-* { .fix-box-sizing; }
+* { .fix-box-sizing; .smooth-text; }
 
 body {
-    
+    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    color: @color-black;
+}
+
+a {
+    text-decoration: none;
+    color: @color-black;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    .font-tight;
+    line-height: 1.1;
+    padding: 0.5em 0;
+    padding-top: 0;
+    margin: 0;
+}
+
+p, pre {
+    margin-top: 0;
+}
+
+nav {
+    ul {
+        .row-list(auto);
+    }
+    ul,li {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.all {
+    min-width: 320px;
+}
+
+.header {
+    position: relative;
+    background: @color-black no-repeat;
+    padding: 1.5em 0;
+    padding-bottom: 1em;
+    color: white;
+
+    h1 {
+        .font-light;
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    a {
+       color: inherit; 
+    }
+
+    .profile-picture {
+        text-align: center;
+
+        img {
+            .size(237px / 2);
+        }
+    }
+
+    .header-content {
+        position: relative;
+        z-index: 3;
+    }
+
+    .background {
+        .size(100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        overflow: hidden;
+        z-index: 1;
+
+        &:before {
+            .size(100%);
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: black;
+            z-index: 2;
+            opacity: 0.2;
+        }
+
+        &.forest {
+            background-image: url('../../img/content/backgrounds/forest.jpg');
+
+            @media screen and (min-width: @break-medium) {
+                background-position: center -150px;
+            }
+            @media screen and (min-width: @break-medium-ls) {
+                background-position: center -250px;
+            }
+            @media screen and (min-width: @break-large) {
+                background-position: center -350px;
+            }
+
+            &:before {
+                opacity: 0.4;
+            }
+        }
+    }
+
+    @media screen and (min-width: @break-medium) {
+        .group;
+
+        .profile-picture {
+            float: left;
+            text-align: right;
+            width: 30%;
+
+            img {
+                .size(237px / 1.5);
+            }
+        }
+
+        h1 {
+            float: right;
+            font-size: 2.5em;
+            text-align: left;
+            padding: 40px 30px;
+            padding-bottom: 0;
+            width: 70%;
+        }
+
+        .menu {
+            clear: both;
+            float: right;
+            padding-left: 30px;
+            padding-bottom: 30px;
+            width: 70%;
+        }
+    }
+
+    @media screen and (max-width: @break-medium) {
+        margin-bottom: 60px;
+    }
+}
+
+.menu {
+    .group;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 1em 0;
+
+    .item {
+        float: left;
+        width: (100% / 3);
+        position: relative;
+        border-color: transparent;
+
+        .icon {
+            display: none;
+        }
+
+        &.active {
+            &:after {
+                position: absolute;
+                content: "";
+                bottom: -2em;
+                left: 38%;
+                
+                @media screen and (min-width: @break-small-ls) {
+                    left: 44%;
+                }
+
+                display: block;
+                width: 0px;
+                height: 0px;
+                border-style: solid;
+                border-width: 0 15px 15px 15px;
+                border-color: transparent transparent #ffffff transparent;
+            }
+        }
+
+        a {
+            .inline-block;
+            .font-demi;
+            .font-tight;
+            width: 62px;
+            margin: 0 auto;
+            line-height: 1;
+            text-transform: uppercase;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    @media screen and (min-width: @break-medium) {
+        padding: 0;
+
+        .item {
+            .round(4px);
+            .inline-block;
+            padding: 0.8em 1em;
+            width: auto;
+            border: 2px solid transparent;
+
+            transition: border 300ms;
+            -webkit-transition: border 300ms;
+            -moz-transition: border 300ms;
+
+            & + .item {
+                margin-left: 1em;
+            }
+
+            &.active {
+                border-color: white;
+
+                &:after {
+                    display: none;
+                }
+            }
+
+            a {
+                width: auto;
+            }
+        }
+    }
+
+    @media screen and (max-width: @break-medium) {
+        .item {
+            .icon {
+                display: block;
+                font-size: 1.8em;
+                position: absolute;
+                bottom: -2.8em;
+                left: 38%;
+                color: @color-lt-grey;
+            }
+
+            &.active {
+                .icon {
+                    color: @color-black;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: @break-small-ls) {
+        .item {
+            .icon {
+                left: 44%;
+            }
+        }
+    }
+}
+
+.content-area {
+    letter-spacing: -0.050em;
+    font-size: 1.2em;
+    padding: 0.5em 1.5em;
+
+    .explicit-link {
+        .font-demi;
+        text-decoration: underline;
+
+        &:hover {
+            color: lighten(@color-black, 10%);
+        }
+    }
+
+    @media screen and (min-width: @break-medium) {
+        padding: 2.5em 30px;
+        margin-left: 30%;
+        max-width: 600px;
+    }
+}
+
+.networks {
+    .row-list(1em);
+    font-size: 1.5em;
+    margin: 0.3em 0;
+
+    .label {
+        display: none;
+    }
+
+    a:hover {
+        text-decoration: none;
+        color: lighten(@color-black, 10%);
+    }
 }

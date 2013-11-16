@@ -1,6 +1,7 @@
 name: "Víctor Fernández"
 desciption: "Front-end developer and designer"
-greeting: "Hi there, my name is Víctor. I'm a front-end developer."
+greeting: "Hi there, my name is Víctor. <br/>I'm a front-end developer."
+email: victor@vctrfrnndz.com
 markdown: maruku
 permalink: /:year/:title
 pygments: true
@@ -8,12 +9,15 @@ exclude: [node_modules, Gruntfile.js, package.json, README.md]
 destination: public
 
 navigation:
-- text: Projects
+- text: Current Projects
   url: '#projects'
+  icon: clock
 - text: Get in touch
   url: '#contact'
+  icon: mail
 - text: About me
   url: '#about-me'
+  icon: user
 
 social:
 - name: Twitter
@@ -24,3 +28,14 @@ social:
   url: http://dribbble.com/vctrfrnndz
 - name: Medium
   url: http://medium.com/vctrfrnndz
+
+projects:
+- name: JSblackjack
+  description: "A fully JS blackjack game. Because the world needed another."
+  url: http://vctrfrnndz.github.io/JSblackjack/
+- name: Kick
+  description: "A LESS mixin library."
+  url: http://vctrfrnndz.github.io/Kick/
+- name: lineIcons
+  description: "My very own iconset. A work in progress, mind you."
+  url: http://vctrfrnndz.github.io/lineIcons/

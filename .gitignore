@@ -3,3 +3,4 @@ public/
 .DS_Store
 .ruby-version
 .sass-cache
+sftp-config.json
