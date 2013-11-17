@@ -31,11 +31,14 @@ social:
 
 projects:
 - name: JSblackjack
-  description: "A fully JS blackjack game. Because the world needed another."
-  url: http://vctrfrnndz.github.io/JSblackjack/
+  description: "A fully JS blackjack game. Because the world needed another. Very few images involved, just icon font trickery."
+  play_link: http://vctrfrnndz.github.io/JSblackjack/
+  github_link: https://github.com/vctrfrnndz/JSblackjack/
 - name: Kick
-  description: "A LESS mixin library."
-  url: http://vctrfrnndz.github.io/Kick/
-- name: lineIcons
+  description: "Kick is a collection of useful LESS mixins for use on any project."
+  github_link: https://github.com/vctrfrnndz/Kick/
+  download_link: https://raw.github.com/vctrfrnndz/kick/master/less/kick.less
+- name: Icomin
   description: "My very own iconset. A work in progress, mind you."
-  url: http://vctrfrnndz.github.io/lineIcons/
+  github_link: http://vctrfrnndz.github.io/Icomin/
+  download_link: http://vctrfrnndz.github.io/Icomin/

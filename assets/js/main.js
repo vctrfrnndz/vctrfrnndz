@@ -1,7 +1,8 @@
 var Vic = {
     init: function() {
-        Vic.lessThanIE8();
-        Vic.defaultNav();
+        this.lessThanIE8();
+        this.defaultNav();
+        this.entryLayout();
     },
 
     helpers: {
@@ -25,7 +26,7 @@ var Vic = {
         humanDate: function($target) {
             $target.each(function() {
                 var $dateElement = $(this),
-                    dateString = date.text(),
+                    dateString = $dateElement.text(),
                     dateFormat;
                 
                 dateFormat = moment(dateString).fromNow();
@@ -52,11 +53,19 @@ var Vic = {
             }
     },
 
+    entryLayout: function() {
+        var $entryTemplate = $('.all.entry');
+
+        if($entryTemplate) {
+            Vic.helpers.humanDate($('time'));
+        }
+    },
+
     defaultNav: function() {
         var $defaultTemplate = $('.all.default'),
             $sections = $defaultTemplate.find('.content-area section'),
             $menu = $defaultTemplate.find('.header .menu'),
-            initialSection = '#contact';
+            initialSection = '#about-me';
 
         function setSection() {
                 var target = location.hash || initialSection,

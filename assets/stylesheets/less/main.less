@@ -8,8 +8,9 @@
 * { .fix-box-sizing; .smooth-text; }
 
 body {
-    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
     color: @color-black;
+    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    line-height: 1.5;
 }
 
 a {
@@ -33,6 +34,10 @@ p, pre {
     margin-top: 0;
 }
 
+ul {
+    list-style-type: square;
+}
+
 nav {
     ul {
         .row-list(auto);
@@ -46,6 +51,10 @@ nav {
 .all {
     min-width: 320px;
 }
+
+//
+// Site Modules
+//
 
 .header {
     position: relative;
@@ -118,6 +127,21 @@ nav {
         }
     }
 
+    &.header-entry {
+        min-height: 200px;
+
+        h1 {
+            margin: 0 0.5em;
+            margin-top: 1em;
+            font-size: 2em;
+        }
+
+        time {
+            display: block;
+            text-align: center;
+        }
+    }
+
     @media screen and (min-width: @break-medium) {
         .group;
 
@@ -136,7 +160,6 @@ nav {
             font-size: 2.5em;
             text-align: left;
             padding: 40px 30px;
-            padding-bottom: 0;
             width: 70%;
         }
 
@@ -150,7 +173,9 @@ nav {
     }
 
     @media screen and (max-width: @break-medium) {
-        margin-bottom: 60px;
+        &.header-generic {
+            margin-bottom: 60px;
+        }
     }
 }
 
@@ -216,9 +241,9 @@ nav {
             width: auto;
             border: 2px solid transparent;
 
-            transition: border 300ms;
             -webkit-transition: border 300ms;
             -moz-transition: border 300ms;
+            transition: border 300ms;
 
             & + .item {
                 margin-left: 1em;
@@ -285,11 +310,15 @@ nav {
         margin-left: 30%;
         max-width: 600px;
     }
+
+    @media screen and (min-width: @break-large) {
+        max-width: 700px;
+    }
 }
 
 .networks {
     .row-list(1em);
-    font-size: 1.5em;
+    font-size: 2em;
     margin: 0.3em 0;
 
     .label {
@@ -299,5 +328,179 @@ nav {
     a:hover {
         text-decoration: none;
         color: lighten(@color-black, 10%);
+    }
+}
+
+.projects-list {
+    .project-item {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        
+        & + .project-item {
+            border-top: 1px solid @color-lt-grey;
+        }
+    }
+
+    .project-item-info {
+        .project-item-description {
+            font-size: 0.8em;
+            margin-bottom: 1.5em;
+        }
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .project-item-extras {
+        .btn {
+            .icon {
+                margin-left: 0.5em;
+            }
+            
+            & + .btn {
+                margin-left: 0.8em;
+            }
+        }
+    }
+
+    @media screen and (min-width: @break-small-ls) {
+        .project-item {
+            .group;
+        }
+
+        .project-item-info,
+        .project-item-extras {
+            float: left;
+        }
+
+        .project-item-info {
+            width: 65%;
+            padding-right: 1.5em;
+        }
+
+        .project-item-extras {
+            width: 35%;
+
+            .btn {
+                width: 100%;
+
+                & + .btn {
+                    margin: 0;
+                    margin-top: 0.8em;
+                }
+            }
+        }
+    }
+}
+
+//
+// UI elements
+//
+
+.btn {
+    .inline-block;
+    .font-bold;
+    .round(4px);
+    padding: 0.5em 1em;
+    color: @color-black;
+    font-size: 0.75em;
+    text-align: center;
+
+    &.btn-standard {
+        border: 1px solid (@color-grey + #555);
+        background-color: (@color-lt-grey + #111);
+
+        &:hover {
+            border-color: (@color-grey + #444);
+        }
+    }
+
+    &.btn-green {
+        color: white;
+        border: 1px solid (@color-green - #222);
+        background-color: @color-green;
+
+        &:hover {
+            background-color: (@color-green - #111);
+        }
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+//
+// Layout Specific
+//
+
+.all {
+    &.default {
+        .hp-section {
+            display: none;
+
+            @media screen and (min-width: @break-medium) {
+                font-size: 1.2em;
+            }
+        }
+
+        .about-text {
+            margin-bottom: 2em;
+        }
+    }
+
+    &.entry {
+        time {
+            opacity: 0;
+
+            -moz-transition: opacity 500ms;
+            -webkit-transition: opacity 500ms;
+            transition: opacity 500ms;
+
+            &.rendered {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+//
+// No JS
+//
+
+.no-js {
+    .all.default .hp-section {
+        display: block;
+    }
+}
+
+
+//
+// Code Higlighting
+//
+
+code {
+    font-family: 'Source Code Pro', 'Menlo', monospace;
+    font-weight: 500;
+}
+
+.highlight {
+    .webkit-scrollbar;
+    border: 0;
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin: 1em 0;
+    padding: 1em;
+    font-size: 16px;
+
+    code {
+        overflow-x: auto;
+        white-space: pre;
+    }
+
+    span {
+        white-space: nowrap;
     }
 }

@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<section id="projects" class="hp-section projects-list">
+    {% for project in site.projects %}
+    <article class="project-item">
+        <div class="project-item-info">
+            <h3 class="project-item-title">{{project.name}}</h3>
+            <p class="project-item-description">{{project.description}}</p>
+        </div>
+        <div class="project-item-extras">
+            {% if project.image %}
+                <img src="{{project.image}}" alt="{{project.name}}">
+            {% endif %}
+
+            {% if project.play_link %}
+                <a class="btn btn-green" href="{{project.play_link}}">Play game</a>
+            {% endif %}
+
+            {% if project.download_link %}
+                <a class="btn btn-green" href="{{project.download_link}}">Download</a>
+            {% endif %}
+
+            {% if project.github_link %}
+                <a class="btn btn-standard" href="{{project.github_link}}">Fork on Github <span class="icon icon-github-alt"></span></a>
+            {% endif %}
+        </div>
+    </article>
+    {% endfor %}
+</section>
+
+<section id="contact" class="hp-section">
+    <p>Hit me up at <a class="explicit-link" href="mailto:{{site.email}}?subject=Contact from website">{{site.email}}</a>, <br>I do the occasional consulting or freelance work.</p>
+</section>
+
+<section id="about-me" class="hp-section">
+    <p class="about-text">I'm a web developer and a designer, focusing on responsive design, HTML5 game development and front-end architecture. I currently work for <a target="_blank" class="explicit-link" href="http://rga.com/">R/GA</a> at Buenos Aires, Argentina.</p>
+
+    <h3>Find me on:</h3>
+
+    <ul class="networks">
+        {% for network in site.social %}
+        <li>
+            <a title="{{ network.name | capitalize }}" href="{{ network.url }}">
+                <span class="label">{{ network.name | capitalize }}</span>
+                <span class="icon icon-{{ network.name | downcase }}"></span>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>

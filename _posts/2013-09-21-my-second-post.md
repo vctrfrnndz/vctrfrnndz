@@ -2,7 +2,7 @@
 title: My second post
 date: 2013-09-21
 slug: my-second-post
-layout: individual
+layout: entry
 ---
 
 Por estas semanas comencé a leer un poco de la obra cumbre de Víctor Hugo, porque nunca viene a mal saber por qué llevo su nombre, y no puedo dejar de compartir una conversación entre un miserable y un justo. Hay algo de miserable y algo de justo en cada uno de nosotros, pero lo asombroso es lo vivos que están los conflictos y las miserias que retrataba mi tocayo en su libro, allá por 1862.
