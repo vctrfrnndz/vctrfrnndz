@@ -2,11 +2,11 @@
 // Breakpoints
 //
 
-@break-small: 20em;
-@break-small-ls: 28em;
-@break-medium: 48em;
-@break-medium-ls: 64em;
-@break-large: 75em;
+@break-small: 320px;
+@break-small-ls: 448px;
+@break-medium: 768px;
+@break-medium-ls: 1024px;
+@break-large: 1200px;
 
 //
 // Colors
@@ -35,4 +35,52 @@
 }
 .font-tight() {
     letter-spacing: -0.063em;
+}
+
+//
+// Header Themes
+//
+
+.header-themes() {
+    &.forest {
+        background-image: url('../../img/content/backgrounds/forest_blurred.jpg');
+
+        @media screen and (min-width: @break-medium) {
+            background-position: center -50px;
+        }
+        @media screen and (min-width: @break-medium-ls) {
+            background-position: center -180px;
+        }
+        @media screen and (min-width: @break-large) {
+            background-position: center -280px;
+        }
+        @media screen and (min-width: (@break-large + 200px)) {
+            background-position: center -380px;
+        }
+
+        &:before {
+            opacity: 0.5;
+        }
+    }
+
+    &.star-wars {
+        background-image: url('../../img/content/backgrounds/star_wars_blurred.jpg');
+
+        @media screen and (min-width: @break-medium) {
+            background-position: center -50px;
+        }
+        @media screen and (min-width: @break-medium-ls) {
+            background-position: center -180px;
+        }
+        @media screen and (min-width: @break-large) {
+            background-position: center -280px;
+        }
+        @media screen and (min-width: (@break-large + 200px)) {
+            background-position: center -380px;
+        }
+
+        &:before {
+            opacity: 0.5;
+        }
+    }
 }

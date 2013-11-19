@@ -34,6 +34,10 @@ p, pre {
     margin-top: 0;
 }
 
+blockquote {
+    border-left: 3px solid @color-black;
+}
+
 ul {
     list-style-type: square;
 }
@@ -108,37 +112,39 @@ nav {
             opacity: 0.2;
         }
 
-        &.forest {
-            background-image: url('../../img/content/backgrounds/forest.jpg');
-
-            @media screen and (min-width: @break-medium) {
-                background-position: center -150px;
-            }
-            @media screen and (min-width: @break-medium-ls) {
-                background-position: center -250px;
-            }
-            @media screen and (min-width: @break-large) {
-                background-position: center -350px;
-            }
-
-            &:before {
-                opacity: 0.4;
-            }
-        }
+        .header-themes;
     }
 
     &.header-entry {
-        min-height: 200px;
+        min-height: 150px;
 
         h1 {
             margin: 0 0.5em;
-            margin-top: 1em;
+            margin-top: 2em;
             font-size: 2em;
         }
 
         time {
+            .font-demi;
             display: block;
             text-align: center;
+            text-transform: uppercase;
+            padding-bottom: 1em;
+        }
+
+        @media screen and (min-width: @break-medium) {
+            h1 {
+                margin: 0;
+                margin-top: 1.5em;
+                padding: 0;
+                font-size: 2.5em;
+            }
+            time {
+                float: left;
+                padding-top: 1em;
+                padding-bottom: 2em;
+                margin-left: 30%;
+            }
         }
     }
 
@@ -148,11 +154,8 @@ nav {
         .profile-picture {
             float: left;
             text-align: right;
+            margin-top: 25px;
             width: 30%;
-
-            img {
-                .size(237px / 1.5);
-            }
         }
 
         h1 {
@@ -172,7 +175,7 @@ nav {
         }
     }
 
-    @media screen and (max-width: @break-medium) {
+    @media screen and (max-width: (@break-medium - 1px)) {
         &.header-generic {
             margin-bottom: 60px;
         }
@@ -200,7 +203,7 @@ nav {
             &:after {
                 position: absolute;
                 content: "";
-                bottom: -2em;
+                bottom: -35px;
                 left: 38%;
                 
                 @media screen and (min-width: @break-small-ls) {
@@ -263,7 +266,7 @@ nav {
         }
     }
 
-    @media screen and (max-width: @break-medium) {
+    @media screen and (max-width: (@break-medium - 1px)) {
         .item {
             .icon {
                 display: block;
@@ -317,7 +320,7 @@ nav {
 }
 
 .networks {
-    .row-list(1em);
+    .row-list(0.8em);
     font-size: 2em;
     margin: 0.3em 0;
 
@@ -357,7 +360,7 @@ nav {
             .icon {
                 margin-left: 0.5em;
             }
-            
+
             & + .btn {
                 margin-left: 0.8em;
             }
@@ -443,6 +446,14 @@ nav {
             @media screen and (min-width: @break-medium) {
                 font-size: 1.2em;
             }
+
+            @media screen and (max-width: (@break-medium - 1px)) {
+                &#contact {
+                    p {
+                        text-align: center;
+                    }
+                }
+            }
         }
 
         .about-text {
@@ -460,6 +471,12 @@ nav {
 
             &.rendered {
                 opacity: 1;
+            }
+        }
+
+        .content-area {
+            @media screen and (min-width: @break-medium) {
+                padding-left: 0;
             }
         }
     }

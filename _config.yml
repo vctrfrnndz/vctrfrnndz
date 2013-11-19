@@ -1,7 +1,7 @@
 name: "Víctor Fernández"
 desciption: "Front-end developer and designer"
 greeting: "Hi there, my name is Víctor. <br/>I'm a front-end developer."
-email: victor@vctrfrnndz.com
+email: me@vctrfrnndz.com
 markdown: maruku
 permalink: /:year/:title
 pygments: true
@@ -27,7 +27,7 @@ social:
 - name: Dribbble
   url: http://dribbble.com/vctrfrnndz
 - name: Medium
-  url: http://medium.com/vctrfrnndz
+  url: http://medium.com/@vctrfrnndz
 
 projects:
 - name: JSblackjack
@@ -39,6 +39,6 @@ projects:
   github_link: https://github.com/vctrfrnndz/Kick/
   download_link: https://raw.github.com/vctrfrnndz/kick/master/less/kick.less
 - name: Icomin
-  description: "My very own iconset. A work in progress, mind you."
-  github_link: http://vctrfrnndz.github.io/Icomin/
-  download_link: http://vctrfrnndz.github.io/Icomin/
+  description: "Icomin is a minimal set of icons for general purpose. Includes both individual SVG's and icon font."
+  github_link: https://github.com/vctrfrnndz/Icomin/
+  download_link: https://github.com/vctrfrnndz/Icomin/archive/v0.1.tar.gz

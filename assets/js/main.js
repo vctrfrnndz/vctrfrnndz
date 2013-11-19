@@ -2,6 +2,7 @@ var Vic = {
     init: function() {
         this.lessThanIE8();
         this.defaultNav();
+        this.randomHeader();
         this.entryLayout();
     },
 
@@ -32,6 +33,14 @@ var Vic = {
                 dateFormat = moment(dateString).fromNow();
                 $dateElement.text('About ' + dateFormat).addClass('rendered');
             });
+        },
+        getTheme: function() {
+            var themes = [
+                'forest',
+                'star-wars'
+            ];
+
+            return themes[Math.floor(Math.random() * themes.length)];
         }
     },
 
@@ -61,6 +70,13 @@ var Vic = {
         }
     },
 
+    randomHeader: function() {
+        var $header = $('.header:not(.custom-bg)'),
+            theme = Vic.helpers.getTheme();
+
+        $header.find('.background').addClass(theme);
+    },
+
     defaultNav: function() {
         var $defaultTemplate = $('.all.default'),
             $sections = $defaultTemplate.find('.content-area section'),
@@ -77,7 +93,7 @@ var Vic = {
         }
 
         if($defaultTemplate) {
-            $menu.on('click', '.item a', setSection);
+            $menu.on('click touchstart', '.item a', setSection);
             $(window).on('hashchange', setSection);
 
             setSection();
@@ -86,6 +102,7 @@ var Vic = {
 
 }
 
-$(document).ready(function() {
+$(function() {
+    FastClick.attach(document.body);
     Vic.init();
 });
