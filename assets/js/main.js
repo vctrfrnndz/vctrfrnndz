@@ -49,16 +49,7 @@ var Vic = {
 
             if(isLtIE8.length > 0) {
                 $('body').css('display', 'none');
-                $('html')
-                    .css({
-                        'background': 'black',
-                        'padding': '2em',
-                        'font-size': '3em',
-                        'text-align': 'center',
-                        'color': 'white',
-                        'font-family': 'sans-serif'
-                    })
-                    .text('Please do yourself a favor. Update your browser.');
+                $('html').text('Please do yourself a favor. Update your browser.');
             }
     },
 
@@ -68,13 +59,28 @@ var Vic = {
         if($entryTemplate) {
             Vic.helpers.humanDate($('time'));
         }
+
+        Vic.setBgHeight();
+
+        $(window).on('resize', function() {
+            Vic.setBgHeight();
+        });
+    },
+
+    setBgHeight: function() {
+        var windowHeight = $(window).outerHeight(),
+            $header = $('.header');
+
+        $header.css('min-height', (windowHeight / 3));       
     },
 
     randomHeader: function() {
-        var $header = $('.header:not(.custom-bg)'),
+        var $header = $('.header'),
             theme = Vic.helpers.getTheme();
 
-        $header.find('.background').addClass(theme);
+        if(!$header.hasClass('custom-bg')) {
+            $header.find('.background').addClass(theme);
+        }
     },
 
     defaultNav: function() {

@@ -1,10 +1,18 @@
-            <section class="header header-entry">
-                <div class="background"></div>
+            {% if page.custom_background %}
+            <style>
+                .background {
+                    background-image: url({{ page.custom_background }}) !important;
+                }
+            </style>
+            {% endif %}
+            <section class="header header-entry {% if page.theme or page.custom_background %}custom-bg{% endif %}">
+                <div class="background {{ page.theme }}"></div>
+                <a class="back-button icon icon-arrowleft" href="/" title="Back"></a>
                 <div class="header-content">
                     <h1>{{ page.title }}</h1>
 
                     {% if page.date %}
-                    <time class="date">{{ page.date }}</time>
+                    <time datetime="{{ page.date }}" class="date">{{ page.date }}</time>
                     {% endif %}
                 </div>
             </section>
