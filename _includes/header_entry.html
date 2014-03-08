@@ -14,5 +14,9 @@
                     {% if page.date %}
                     <time datetime="{{ page.date }}" class="date">{{ page.date }}</time>
                     {% endif %}
+
+                    {% if page.custom_subtitle %}
+                    <span class="subtitle">{{ page.custom_subtitle }}</span>
+                    {% endif %}
                 </div>
             </section>

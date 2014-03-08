@@ -59,19 +59,6 @@ var Vic = {
         if($entryTemplate) {
             Vic.helpers.humanDate($('time'));
         }
-
-        Vic.setBgHeight();
-
-        $(window).on('resize', function() {
-            Vic.setBgHeight();
-        });
-    },
-
-    setBgHeight: function() {
-        var windowHeight = $(window).outerHeight(),
-            $header = $('.header');
-
-        $header.css('min-height', (windowHeight / 3));       
     },
 
     randomHeader: function() {

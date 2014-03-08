@@ -42,6 +42,10 @@ ul {
     list-style-type: square;
 }
 
+img {
+    max-width: 100%;
+}
+
 nav {
     ul {
         .row-list(auto);
@@ -117,7 +121,8 @@ nav {
 
     &.header-entry {
         position: relative;
-        min-height: 150px;
+        min-height: 215px;
+        margin-bottom: 20px;
 
         h1 {
             margin: 0 0.5em;
@@ -125,7 +130,8 @@ nav {
             font-size: 2em;
         }
 
-        time {
+        time,
+        .subtitle {
             .font-demi;
             display: block;
             text-align: center;
@@ -168,7 +174,8 @@ nav {
                 margin-left: 30%;
                 float: left;
             }
-            time {
+            time,
+            .subtitle {
                 float: left;
                 padding-top: 1em;
                 padding-bottom: 2em;
@@ -371,6 +378,10 @@ nav {
         & + .project-item {
             border-top: 1px solid @color-lt-grey;
         }
+
+        .project-item-image {
+            margin-bottom: 1em;
+        }
     }
 
     .project-item-info {
@@ -511,6 +522,10 @@ nav {
 
             @media screen and (min-width: @break-medium-ls) {
                 padding-right: 0;
+            }
+
+            p > a {
+                text-decoration: underline;
             }
         }
 
