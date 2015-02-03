@@ -1,0 +1,107 @@
+//
+// Breakpoints
+//
+
+@break-small: 320px;
+@break-small-ls: 448px;
+@break-medium: 768px;
+@break-medium-ls: 1024px;
+@break-large: 1200px;
+
+//
+// Colors
+//
+
+@color-green: #479C54;
+@color-black: #333333;
+@color-lt-grey: #dddddd;
+@color-grey: #666666;
+
+//
+// Font Weights & Options
+//
+
+.font-bold() {
+    font-weight: bold;
+}
+.font-demi() {
+    font-weight: 600;
+}
+.font-normal() {
+    font-weight: 400;
+}
+.font-light() {
+    font-weight: 300;
+}
+.font-tight() {
+    letter-spacing: -0.063em;
+}
+
+//
+// Header Themes
+//
+
+.header-themes() {
+    &.forest {
+        background-image: url('../../img/content/backgrounds/forest_blurred.jpg');
+
+        @media screen and (min-width: @break-medium) {
+            background-position: center -50px;
+        }
+        @media screen and (min-width: @break-medium-ls) {
+            background-position: center -180px;
+        }
+        @media screen and (min-width: @break-large) {
+            background-position: center -280px;
+        }
+        @media screen and (min-width: (@break-large + 200px)) {
+            background-position: center -380px;
+        }
+
+        &:before {
+            opacity: 0.5;
+        }
+    }
+
+    &.star-wars {
+        background-image: url('../../img/content/backgrounds/star_wars_blurred.jpg');
+
+        @media screen and (min-width: @break-medium) {
+            background-position: center -50px;
+        }
+        @media screen and (min-width: @break-medium-ls) {
+            background-position: center -180px;
+        }
+        @media screen and (min-width: @break-large) {
+            background-position: center -280px;
+        }
+        @media screen and (min-width: (@break-large + 200px)) {
+            background-position: center -380px;
+        }
+
+        &:before {
+            opacity: 0.5;
+        }
+    }
+
+    &.dusty-sky {
+        background-image: url('../../img/content/backgrounds/dusty_sky.jpg');
+
+        @media screen and (min-width: @break-medium) {
+            background-position: center -250px;
+        }
+        @media screen and (min-width: @break-medium-ls) {
+            background-position: center -380px;
+        }
+        @media screen and (min-width: @break-large) {
+            background-position: center -480px;
+        }
+        @media screen and (min-width: (@break-large + 200px)) {
+            background-position: center -580px;
+        }
+
+        &:before {
+            opacity: 0.5;
+        }
+    }
+}
