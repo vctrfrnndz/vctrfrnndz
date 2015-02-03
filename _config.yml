@@ -5,7 +5,7 @@ email: victor@auth0.com
 markdown: kramdown
 permalink: /:year/:title
 highlighter: true
-exclude: [node_modules, Gruntfile.js, package.json, README.md]
+exclude: [node_modules, Gruntfile.js, Gemfile, Gemfile.lock, config.ru, package.json, README.md]
 destination: public
 
 navigation:
