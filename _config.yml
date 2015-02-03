@@ -1,10 +1,10 @@
 name: "Víctor Fernández"
-desciption: "Front-end developer and designer"
-greeting: "Hi there, my name is Víctor. <br/>I'm a front-end developer."
-email: me@vctrfrnndz.com
-markdown: maruku
+desciption: "Designer and front-end developer"
+greeting: "Víctor Fernández. <span>Designer and front-end developer.</span>"
+email: victor@auth0.com
+markdown: kramdown
 permalink: /:year/:title
-pygments: true
+highlighter: true
 exclude: [node_modules, Gruntfile.js, package.json, README.md]
 destination: public
 
@@ -30,6 +30,11 @@ social:
   url: http://medium.com/@vctrfrnndz
 
 projects:
+- name: jQuery Accordion
+  description: "Generates accordions powered by CSS transitions to animate opening/closing with a fallback to jQuery's animate when CSS transitions are not supported. It takes little configuration or code to use it on your project."
+  play_link: http://vctrfrnndz.github.io/jquery-accordion/
+  github_link: https://github.com/vctrfrnndz/jquery-accordion
+  image: http://f.cl.ly/items/1S091P2A0T1A2p3F1y0n/accordion.png
 - name: JSblackjack
   description: "A fully JS blackjack game. Because the world needed another. Very few images involved, just icon font trickery."
   play_link: http://vctrfrnndz.github.io/JSblackjack/

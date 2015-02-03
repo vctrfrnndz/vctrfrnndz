@@ -16,7 +16,7 @@ layout: default
         </div>
         <div class="project-item-extras">
             {% if project.play_link %}
-                <a class="btn btn-green" href="{{project.play_link}}">Play game</a>
+                <a class="btn btn-green" href="{{project.play_link}}">Try out the demo</a>
             {% endif %}
 
             {% if project.download_link %}
@@ -24,7 +24,7 @@ layout: default
             {% endif %}
 
             {% if project.github_link %}
-                <a class="btn btn-standard" href="{{project.github_link}}">Fork on Github <span class="icon icon-github-alt"></span></a>
+                <a class="btn btn-standard" href="{{project.github_link}}">View on Github <span class="icon icon-github-alt"></span></a>
             {% endif %}
         </div>
     </article>
@@ -32,13 +32,21 @@ layout: default
 </section>
 
 <section id="contact" class="hp-section">
-    <p>Hit me up at <a class="explicit-link" href="mailto:{{site.email}}?subject=Contact from website">{{site.email}}</a>, <br>I do the occasional consulting or freelance work.</p>
+    <p>Reach me at <a class="explicit-link" href="mailto:{{site.email}}?subject=Contact from website">{{site.email}}</a>.</p>
 </section>
 
 <section id="about-me" class="hp-section">
-    <p class="about-text">I'm a web developer and a designer, focusing on responsive design, HTML5 game development and front-end architecture. I currently work for <a target="_blank" class="explicit-link" href="http://rga.com/">R/GA</a> at Buenos Aires, Argentina.</p>
+    <p class="about-text">I'm a developer and a designer focusing on responsive design, HTML5 game development and front-end architecture. I currently work for <a target="_blank" class="explicit-link" href="http://auth0.com/">Auth0</a> at Buenos Aires, Argentina.</p>
 
-    <h3>Find me on:</h3>
+    <div class="js-medium-feed hidden">
+        <h3>Latest posts</h3>
+
+        <ul class="entries about-text">
+            
+        </ul>
+    </div>
+
+    <h3>Elsewhere</h3>
 
     <ul class="networks">
         {% for network in site.social %}

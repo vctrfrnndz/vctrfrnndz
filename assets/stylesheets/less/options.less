@@ -83,4 +83,25 @@
             opacity: 0.5;
         }
     }
+
+    &.dusty-sky {
+        background-image: url('../../img/content/backgrounds/dusty_sky.jpg');
+
+        @media screen and (min-width: @break-medium) {
+            background-position: center -250px;
+        }
+        @media screen and (min-width: @break-medium-ls) {
+            background-position: center -380px;
+        }
+        @media screen and (min-width: @break-large) {
+            background-position: center -480px;
+        }
+        @media screen and (min-width: (@break-large + 200px)) {
+            background-position: center -580px;
+        }
+
+        &:before {
+            opacity: 0.5;
+        }
+    }
 }

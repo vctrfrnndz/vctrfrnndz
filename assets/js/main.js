@@ -4,6 +4,7 @@ var Vic = {
         this.defaultNav();
         this.randomHeader();
         this.entryLayout();
+        this.getMediumPosts();
     },
 
     helpers: {
@@ -37,7 +38,8 @@ var Vic = {
         getTheme: function() {
             var themes = [
                 'forest',
-                'star-wars'
+                'star-wars',
+                'dusty-sky'
             ];
 
             return themes[Math.floor(Math.random() * themes.length)];
@@ -51,6 +53,41 @@ var Vic = {
                 $('body').css('display', 'none');
                 $('html').text('Please do yourself a favor. Update your browser.');
             }
+    },
+
+    getMediumPosts: function() {
+        var FEED_URL = 'https://medium.com/feed/@vctrfrnndz';
+        var $target = $('.js-medium-feed');
+        var feedLength;
+
+        $.ajax({
+          url      : document.location.protocol + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent(FEED_URL),
+          dataType : 'json',
+          success  : function (data) {
+            if (data.responseData.feed && data.responseData.feed.entries) {
+                feedLength = data.responseData.feed.entries.length;    
+
+                $.each(data.responseData.feed.entries, function (i, e) {
+                    if(i < 5) {
+                        var $entry = $('<li class="entry"><span class="icon icon-book"></span> <a href class="title explicit-link"></a><span class="date"></span><span class="description"></span></li>');
+                        var date = moment(e.publishedDate).fromNow();
+
+                        $entry.find('.title').text(e.title);
+                        $entry.find('.title').attr('title', 'Read "' + e.title + '" on Medium');
+                        $entry.find('.title').attr('href', e.link);
+                        $entry.find('.date').text(date);
+                        $entry.find('.description').text(e.contentSnippet);
+
+                        $target.find('ul').append($entry);
+                    }
+                });
+
+                if(feedLength > 0) {
+                    $target.removeClass('hidden');
+                }
+            }
+          }
+        });
     },
 
     entryLayout: function() {
@@ -83,6 +120,8 @@ var Vic = {
                 $menu.find('.item').removeClass('active');
                 $menuItem.parents('.item').addClass('active');
                 $sections.hide().siblings(target).show();
+
+                $(window).get(0).scrollTo(0,0);
         }
 
         if($defaultTemplate) {

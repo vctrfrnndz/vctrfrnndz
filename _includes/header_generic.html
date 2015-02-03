@@ -4,7 +4,7 @@
                     <h1>{{ site.greeting }}</h1>
 
                     <div class="profile-picture">
-                        <img src="assets/img/content/circle.png" alt="Hey there!">
+                        <img src="{{ site.email | to_gravatar }}" alt="Victor Fernandez">
                     </div>
                     
                     <nav class="menu">
