@@ -15,8 +15,8 @@ navigation:
 - text: Get in touch
   url: '#contact'
   icon: mail
-- text: About me
-  url: '#about-me'
+- text: Latest details
+  url: '#latest'
   icon: user
 
 social:

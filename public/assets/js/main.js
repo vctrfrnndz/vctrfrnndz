@@ -69,7 +69,7 @@ var Vic = {
 
                 $.each(data.responseData.feed.entries, function (i, e) {
                     if(i < 5) {
-                        var $entry = $('<li class="entry"><span class="icon icon-book"></span> <a href class="title explicit-link"></a><span class="date"></span><span class="description"></span></li>');
+                        var $entry = $('<li class="entry"><span class="icon icon-pencil"></span> <a href class="title explicit-link"></a><span class="date"></span><span class="description"></span></li>');
                         var date = moment(e.publishedDate).fromNow();
 
                         $entry.find('.title').text(e.title);
@@ -111,7 +111,7 @@ var Vic = {
         var $defaultTemplate = $('.all.default'),
             $sections = $defaultTemplate.find('.content-area section'),
             $menu = $defaultTemplate.find('.header .menu'),
-            initialSection = '#about-me';
+            initialSection = '#latest';
 
         function setSection() {
                 var target = location.hash || initialSection,

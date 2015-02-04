@@ -26,9 +26,13 @@ a {
 h1, h2, h3, h4, h5, h6 {
     .font-tight;
     line-height: 1.1;
-    padding: 0.5em 0;
+    padding: 1em 0;
     padding-top: 0;
     margin: 0;
+}
+
+h3 {
+    font-size: 1.3em;
 }
 
 p, pre {
@@ -59,10 +63,22 @@ nav {
 
 .all {
     min-width: 320px;
+    overflow-x: hidden;
 }
 
 .hidden {
     display: none;
+}
+
+.separator {
+    width: 4000%;
+    height: 1px;
+    display: block;
+    background: #E2E2E2;
+    left: -100%;
+    position: relative;
+    margin: 2em 0;
+    border: 0;
 }
 
 //
@@ -280,10 +296,6 @@ nav {
             a  {
                 .font-demi;
             }
-
-            a:hover {
-                opacity: 1;
-            }
         }
 
         a {
@@ -297,7 +309,6 @@ nav {
 
             &:hover {
                 text-decoration: none;
-                opacity: 0.7;
             }
         }
     }
@@ -308,28 +319,32 @@ nav {
         .item {
             .round(4px);
             .inline-block;
-            padding: 0.8em 1em;
             width: auto;
             border: 1px solid transparent;
 
-            -webkit-transition: border 300ms;
-            -moz-transition: border 300ms;
-            transition: border 300ms;
+            -webkit-transition: border 300ms ease-in;
+            -moz-transition: border 300ms ease-in; 
+            transition: border 300ms ease-in;
 
             & + .item {
                 margin-left: 1em;
             }
 
             &.active {
-                border-color: rgba(255,255,255, 0.4);
+                border-color: rgba(255,255,255, 0.2);
 
                 &:after {
                     display: none;
+                }
+
+                &:hover {
+                    background: none;
                 }
             }
 
             a {
                 width: auto;
+                padding: 1em;
             }
         }
     }
@@ -439,14 +454,11 @@ nav {
 }
 
 .projects-list {
-    .project-item {
-        padding-top: 1em;
-        padding-bottom: 1em;
-        
-        & + .project-item {
-            border-top: 1px solid @color-lt-grey;
-        }
+    .separator:last-child {
+        display: none;
+    }
 
+    .project-item {
         .project-item-image {
             margin-bottom: 1em;
         }
@@ -469,6 +481,7 @@ nav {
                 position: relative;
                 top: 2px;
                 left: 5px;
+                margin-right: 5px;
             }
 
             & + .btn {
@@ -515,9 +528,10 @@ nav {
     .inline-block;
     .font-bold;
     .round(4px);
-    padding: 5px 12px;
+    text-transform: uppercase;
+    padding: 8px 12px;
     color: @color-black;
-    font-size: 0.75em;
+    font-size: 14px;
     text-align: center;
 
     &.btn-standard {

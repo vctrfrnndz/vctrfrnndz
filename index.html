@@ -16,7 +16,7 @@ layout: default
         </div>
         <div class="project-item-extras">
             {% if project.play_link %}
-                <a class="btn btn-green" href="{{project.play_link}}">Try out the demo</a>
+                <a class="btn btn-green" href="{{project.play_link}}">Try demo</a>
             {% endif %}
 
             {% if project.download_link %}
@@ -24,10 +24,12 @@ layout: default
             {% endif %}
 
             {% if project.github_link %}
-                <a class="btn btn-standard" href="{{project.github_link}}">View on Github <span class="icon icon-github-alt"></span></a>
+                <a class="btn btn-standard" href="{{project.github_link}}">View on Github <span class="icon icon-github"></span></a>
             {% endif %}
         </div>
     </article>
+
+    <hr class="separator">
     {% endfor %}
 </section>
 
@@ -35,16 +37,20 @@ layout: default
     <p>Reach me at <a class="explicit-link" href="mailto:{{site.email}}?subject=Contact from website">{{site.email}}</a>.</p>
 </section>
 
-<section id="about-me" class="hp-section">
-    <p class="about-text">I'm a developer and a designer focusing on responsive design, HTML5 game development and front-end architecture. I currently work for <a target="_blank" class="explicit-link" href="http://auth0.com/">Auth0</a> in Buenos Aires, Argentina.</p>
+<section id="latest" class="hp-section">
+    <p>I'm a developer and a designer focusing on responsive design, HTML5 game development and front-end architecture. I currently work for <a target="_blank" class="explicit-link" href="http://auth0.com/">Auth0</a> in Buenos Aires, Argentina.</p>
+
+    <hr class="separator">
 
     <div class="js-medium-feed hidden">
-        <h3>Latest posts</h3>
+        <h3>Writing</h3>
 
-        <ul class="entries about-text">
+        <ul class="entries">
             
         </ul>
     </div>
+
+    <hr class="separator">
 
     <h3>Elsewhere</h3>
 
